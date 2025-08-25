@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+string sortDigitsWithZeros(int num) {
+    string s = to_string(num);
+    sort(s.begin(), s.end());
+    return s;
+}
+
+int main() {
+    const int N = 5;
+    vector<int> original = {421, 507, 910, 200, 929};
+    vector<string> sortedDigits(N);
+
+    for (int i = 0; i < N; i++) {
+        sortedDigits[i] = sortDigitsWithZeros(original[i]);
+    }
+
+    sort(sortedDigits.begin(), sortedDigits.end());
+
+    cout << "Array after sorting : ";
+    for (const string& s : sortedDigits) {
+        cout << s << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
