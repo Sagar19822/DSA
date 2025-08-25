@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+int passbyValue(int a)
+{
+	cout << "Change in a : "<<a+10<<endl;
+	return a;	
+}
+
+int passbyReference(int *a)
+{
+	*a=*a+20;
+	cout << "Change in a "<<*a<<endl;
+	return *a;
+}
+
+int main()
+{
+	int a=10,pv,pr;
+	
+	pv=passbyValue(a);
+	cout<<a<<endl;
+	pr=passbyReference(&a);
+	cout<<a<<endl;
+	
+	return 0;
+}
